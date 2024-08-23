@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://fonts.googleapis.com/css2?family=Quicksand&display=swap" rel="stylesheet">
+    <!-- <link rel="stylesheet" href="styles.css"> -->
+    <!-- <script src="https://cdn.tailwindcss.com"></script> -->
+    <style>
+        * {
+    box-sizing: border-box;
+    font-family: 'Quicksand', sans-serif;
+  }
+  
+  input[type=text], select, textarea, input[type=email] {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    resize: vertical;
+  }
+  
+  label {
+    padding: 12px 12px 12px 0;
+    display: inline-block;
+    color: aliceblue;
+  }
+  
+  button{
+    background-color: #004f43;
+    color: white;
+    padding: 12px 30px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-top: 30px;
+    float: right;
+  }
+  
+  button:hover {
+    background-color: #018a75;
+  }
+  
+  .container {
+    border-radius: 5px;
+    background-color: #011b0f;
+    padding: 20px;
+  }
+  
+  .col-25 {
+    float: left;
+    width: 25%;
+    margin-top: 6px;
+  }
+  
+  .col-75 {
+    float: left;
+    width: 75%;
+    margin-top: 6px;
+  }
+  
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+   
+  @media screen and (max-width: 600px) {
+    .col-25, .col-75, input[type=submit] {
+      width: 100%;
+      margin-top: 0;
+    }
+  }
+    </style>
+</head>
+
+<body>
+    
+    <div class="container"> 
+  <!-- start form -->
+        <form id="signupForm">
+       <!-- start name    -->
+            <div class="row">
+                <div class="col-25">
+                    <label for="fname">First Name</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="name" id="name" placeholder="Fullname.." required />
+                </div>
+            </div>
+        <!-- end name -->
+
+        <!-- start mobile_no    -->
+               <div class="row">
+                <div class="col-25">
+                    <label for="mobile_no">Contact Number</label>
+                </div>
+                <div class="col-75">
+                    <input type="text" name="mobile_no" id="mobile_no" placeholder="Contact No." required />
+                </div>
+            </div>
+        <!-- end name -->
+
+        <!-- start email    -->
+                <div class="row">
+                    <div class="col-25">
+                        <label for="mobile_no">Email</label>
+                    </div>
+                    <div class="col-75">
+                        <input type="text" name="email_id" id="email_id" placeholder="Contact No." required />
+                    </div>
+                </div>
+            <!-- end email -->
+          
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Last Name</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+          </div>
+        </div>  
+          
+        <div class="row">
+          <div class="col-25">
+            <label for="email">Email</label>
+          </div>
+          <div class="col-75">
+            <input type="email" id="email" name="email" placeholder="Your email..">
+          </div>
+        </div>
+          
+        <div class="row">
+          <div class="col-25">
+            <label for="country">Country</label>
+          </div>
+          <div class="col-75">
+            <select id="country" name="country">
+              <option value="belgium">Belgium</option>
+              <option value="canada">Canada</option>
+              <option value="france">France</option>
+              <option value="germany">Germany</option>
+              <option value="portugal">Portugal</option>
+              <option value="spain">Spain</option>
+            </select>
+          </div>
+        </div>
+          
+        <div class="row">
+          <div class="col-25">
+            <label for="subject">Your message..</label>
+          </div>
+          <div class="col-75">
+            <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+          </div>
+        </div>
+          
+        <div class="grid grid-cols-3 gap-4">
+            <button type="submit"
+                class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                onclick="AddRow()" id="add_button">Save</button>
+            <button type="button"
+                class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                onclick="UpdateRecord()" id="update_button">Update</button>
+            <button type="reset"
+                class="text-white bg-orange-700 hover:bg-orange-800 focus:ring-4 focus:outline-none focus:ring-orange-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-orange-600 dark:hover:bg-orange-700 dark:focus:ring-orange-800">Clear</button>
+        </div>
+          
+        </form>
+      </div>
+      
+      </body>
+      </html>
+
+</body>
+
+</html>

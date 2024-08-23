@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+
+<body>
+    
+    <script>
+          var rnum = "";
+
+        function AddRow() {
+            var name = document.getElementById("name").value;
+            var mobile_no = document.getElementById("mobile_no").value;
+            var email_id = document.getElementById("email_id").value;
+            var gender = document.getElementById("gender").value;
+            var age = document.getElementById("age").value;
+            var bday = document.getElementById("bday").value;
+            var contact = document.getElementById("contact").value;
+            var address = document.getElementById("address").value;
+            var religion = document.getElementById("religion").value;
+            var churchName = document.getElementById("churchName").value;
+            var churchPosition = document.getElementById("churchPosition").value;
+            var churchAdd = document.getElementById("churchAdd").value;
+            var community = document.getElementById("community").value;
+            var communityAdd = document.getElementById("communityAdd").value;
+
+
+            if (name != '' && mobile_no != '' && email_id != '' && gender != '' && age != '' && bday != '' && contact != '' && address != ''  && religion != '' && churchName != '' && churchPosition != '' && churchAdd != '' && community != '' && communityAdd != '' ) {
+                google.script.run.withSuccessHandler(function (return_string) {
+                    document.getElementById("add_button").disabled = false;
+                }).AddRecord(name, mobile_no, email_id, gender, age, bday, contact, address, religion, churchName, churchPosition, churchAdd, community, communityAdd );
+            }
+        }
+
+
+
+        function SearchRecords() {
+            var name = document.getElementById("name").value;
+            var mobile_no = document.getElementById("mobile_no").value;
+            var email_id = document.getElementById("email_id").value;
+            var email_id_search = document.getElementById("email_id_search").value;
+            var row_number = 0;
+
+            google.script.run.withSuccessHandler(function (ar) {
+
+                console.log(ar);
+                var displayTable = '<div class=\"grid grid-cols-2 gap-4\">';
+                displayTable += "<div><b>Fullname</b></b></div>";
+                displayTable += "<div><b>Referred By</b></div>";
+                displayTable += "</div>";
+                displayTable += "<div class=\"grid grid-cols-2 gap-10\">";
+
+                ar.forEach(function (item, index) {
+                    displayTable += "<input type=\"hidden\" id=\"up_record_id" + row_number + "\" value=\"" + item[0] + "\" />";
+                    displayTable += "<div id=\"up_name" + row_number + "\">";
+                    displayTable += item[1]
+                    displayTable += "</div>"
+                    displayTable += "<div id=\"up_email_id" + row_number + "\">";
+                    displayTable += item[3]
+                    displayTable += "</div>"
+                    row_number++;
+                });
+
+                displayTable += '</div>';
+                document.getElementById("rowdata").innerHTML = displayTable;
+
+            }).SearchRecords(email_id_search);
+
+        }
+
+    </script>
+
+    <main class="mx-auto flex min-h-screen w-full items-top justify-center bg-gray-900 text-white">
+        <section class="flex w-[30rem] flex-col space-y-10">
+            <div class="text-center text-4xl font-medium mt-5">New Offshoot Vines</div>
+            
+   
+            <form id="signupForm">
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="email_id" id="email_id" placeholder="Referred By: Fullname" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="name" id="name" placeholder="Fullname" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="mobile_no" id="mobile_no" placeholder="Username" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+            
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="gender" id="gender" placeholder="Gender" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="number" name="age" id="age" placeholder="Age" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="bday" id="bday" placeholder="Birthday: mm/dd/yyyy" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="number" name="contact" id="contact" placeholder="Mobile No." class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="address" id="address" placeholder="Barangay, Municipality, Province" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="religion" id="religion" placeholder="Religion" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="churchName" id="churchName" placeholder="Church Name" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="churchPosition" id="churchPosition" placeholder="Church Position" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="churchAdd" id="churchAdd" placeholder="Church Address" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="community" id="community" placeholder="School / WorkType / Senior" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+                    <div class="w-full transform border-b-2 bg-transparent text-lg duration-300 focus-within:border-indigo-500">
+                        <input type="text" name="communityAdd" id="communityAdd" placeholder="Community Address" class="w-full border-none bg-transparent outline-none placeholder:italic focus:outline-none m-2" required />
+                    </div>
+
+
+                    <!-- submit button -->
+
+                    <div class="grid grid-cols-1 gap-4 m-5">
+                        <button type="submit"
+                            class="text-white bg-green-700 hover:bg-green-800 focus:ring-4 focus:outline-none focus:ring-green-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-green-600 dark:hover:bg-green-700 dark:focus:ring-green-800"
+                            onclick="AddRow()" id="add_button">Submit</button>
+                    </div>
+
+            </form>
+
+
+        <!-- search portion -->
+
+        <div class="block p-6 rounded-lg shadow-lg bg-gray-900 mx-8 my-8">
+            <div class="grid grid-cols-2 gap-4">
+
+                <span class="">
+                    <button type="button"
+                        class="text-white bg-blue-700 hover:bg-blue-800 max-w-[450px] focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+                        onclick="SearchRecords()">Search</button>
+                </span>
+
+                <div class="relative z-0 w-full mb-6 group">
+                    <input type="email" id="email_id_search"
+                        class="block py-2.5 px-0 w-full text-sm text-white-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+                        placeholder=" " required />
+                    <label for="floating_email"
+                        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:left-0 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6">Referred By</label>
+    
+                </div>
+
+            </div>
+
+        <!-- end search portion -->
+
+            <div id="rowdata"></div>
+        </div>
+            
+    
+        </section>
+    </main>
+
+</body>
+
+</html>
