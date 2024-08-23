@@ -25,16 +25,16 @@ if (found_record == false) {
   dataSheet.appendRow([uniqueID, name, mobile_no, email_id, gender, age, bday, contact, address, religion, churchName, churchPosition, churchAdd, community, communityAdd, new Date()]);
 }
 var message =
-  "Name : " +
+  "Fullname : " +
   name +
   "<br/>" +
-  " Mobile : " +
+  " Username : " +
   mobile_no +
   "<br/>" +
-  " Email : " +
+  " Referred By : " +
   email_id;
 MailApp.sendEmail({
-  to: "sheetsubmitdata@gmail.com",
+  to: "kingdomchronicle1@gmail.com",
   subject: "New message",
   htmlBody: message,
 });
@@ -111,6 +111,18 @@ function SearchRecords(email_id_search) {
 
   return returnRows;
 }
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
