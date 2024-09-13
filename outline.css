@@ -388,3 +388,28 @@ p {text-align: justify;}
     padding: 1rem 1rem;
     cursor: pointer;
     }
+
+/* Table of Contents */
+    
+    .toc{
+        height: 500px;
+        width: 500px;
+        padding: 20px;
+        border-radius: 20px;
+        background-color: rgb(182, 169, 135);
+        box-shadow: 10px 10px 5px #aaaaaa;
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .tocCon{
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        overflow: hidden;
+        gap: 50px;
+        background-color: rgb(219, 228, 198);
+        padding: 20px;
+    }
