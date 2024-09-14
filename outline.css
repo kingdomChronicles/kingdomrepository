@@ -390,9 +390,33 @@ p {text-align: justify;}
     }
 
 /* Table of Contents */
+
+.tocCon{
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    justify-content: center !important;
+    align-items: center !important;
+    overflow: hidden !important;
+    gap: 50px !important;
+    background-color: rgb(219, 228, 198) !important;
+    padding: 20px !important;
+}
+
+.toc1{
+    height: 700px !important;
+    width: 500px !important;
+    padding: 20px !important;
+    border-radius: 20px !important;
+    background-color: rgb(182, 169, 135) !important;
+    box-shadow: 10px 10px 5px #aaaaaa !important;
+    position: relative !important;
+    overflow: hidden !important;
+}
+
     
-    .toc{
-        height: 700px !important;
+    .toc2{
+        height: 500px !important;
         width: 500px !important;
         padding: 20px !important;
         border-radius: 20px !important;
@@ -402,14 +426,47 @@ p {text-align: justify;}
         overflow: hidden !important;
     }
     
-    .tocCon{
-        display: flex !important;
-        flex-direction: row !important;
-        flex-wrap: wrap !important;
-        justify-content: center !important;
-        align-items: center !important;
-        overflow: hidden !important;
-        gap: 50px !important;
-        background-color: rgb(219, 228, 198) !important;
+    .toc3{
+        height: 450px !important;
+        width: 500px !important;
         padding: 20px !important;
+        border-radius: 20px !important;
+        background-color: rgb(182, 169, 135) !important;
+        box-shadow: 10px 10px 5px #aaaaaa !important;
+        position: relative !important;
+        overflow: hidden !important;
     }
+
+    .toc4{
+        height: 300px !important;
+        width: 500px !important;
+        padding: 20px !important;
+        border-radius: 20px !important;
+        background-color: rgb(182, 169, 135) !important;
+        box-shadow: 10px 10px 5px #aaaaaa !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .toc5{
+        height: 280px !important;
+        width: 500px !important;
+        padding: 20px !important;
+        border-radius: 20px !important;
+        background-color: rgb(182, 169, 135) !important;
+        box-shadow: 10px 10px 5px #aaaaaa !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+    .toc6{
+        height: 200px !important;
+        width: 500px !important;
+        padding: 20px !important;
+        border-radius: 20px !important;
+        background-color: rgb(182, 169, 135) !important;
+        box-shadow: 10px 10px 5px #aaaaaa !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
