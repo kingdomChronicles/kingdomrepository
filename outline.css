@@ -19,7 +19,7 @@ body{
 }
 
 h3 {color: rgb(24, 5, 105);}
-a {text-decoration: none;}
+a {text-decoration: none !important; }
 p {text-align: justify;}
 
 #main-document{
@@ -473,4 +473,8 @@ p {text-align: justify;}
     /* Notes Highlights */
 
     .note { color: red; }
+
+    /* Announcement */
+    .announce { color:#fafafa;}
+
 
