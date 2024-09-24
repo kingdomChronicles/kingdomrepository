@@ -17,6 +17,21 @@
   body { background-color: #fafafa; line-height: 1.6; }
   html,* { font-family: 'Inter'; }
   p { font-size: 1.25rem; }
+  .floating-container {
+    position: fixed;
+    width: 100px;
+    height: 100px;
+    bottom: 0;
+    right: 0;
+    margin: 35px 25px;
+  }
+  .floating-container:hover {
+    height: 300px;
+  }
+  .floating-container:hover .floating-button {
+  
+  }
+
 
 </style>
 </head>
@@ -148,7 +163,23 @@
 
 
 
-            
+<div class="floating-container">
+  <div class="floating-button">+</div>
+  <div class="element-container">
+    <span class="float-element">
+      <i class="material-icon">Phone</i>
+    </span>
+    <span class="float-element">
+      <i class="material-icon">Email</i>
+    </span>
+    <span class="float-element">
+      <i class="material-icon">chat</i>
+    </span>
+
+  </div>
+
+</div>
+             
   
 
 <!-- GOOGLE ADS SCRIPT -->
