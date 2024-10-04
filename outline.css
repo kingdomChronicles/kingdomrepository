@@ -525,3 +525,22 @@ p {text-align: justify;}
         block-size: auto;
       }
 
+      /****** MOBILE ******/
+
+@media only screen and (max-width: 480px){
+
+    .mogg{
+        height: 500px !important;
+        width: 435px !important;
+        padding: 20px !important;
+        border-radius: 20px !important;
+        background-color: rgb(219, 214, 202) !important;
+        box-shadow: 10px 10px 5px #aaaaaa !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+
+    
+}
+
