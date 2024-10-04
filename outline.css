@@ -475,7 +475,7 @@ p {text-align: justify;}
 
     .note { color: red; }
 
-    .praise { color: blue;}
+    .praise { color: rgb(8, 8, 126);}
 
     /* Announcement */
     .announce { color:#fafafa;}
