@@ -530,7 +530,7 @@ p {text-align: justify;}
 @media only screen and (max-width: 480px){
 
     .mogg{
-        height: 500px !important;
+        height: 300px !important;
         width: 435px !important;
         padding: 20px !important;
         border-radius: 20px !important;
