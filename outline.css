@@ -539,7 +539,7 @@ p {text-align: justify;}
       /****** MOBILE ******/
 
       .imgsc {
-        max-inline-size: 20%;
+        max-inline-size: 30%;
         block-size: auto;
         border-radius: 20px !important;
         background-color: rgb(219, 214, 202) !important;
