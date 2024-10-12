@@ -487,7 +487,18 @@ p {text-align: justify;}
 
     /* Notes Highlights */
 
-    .note { color: red; }
+    .note { color: rgb(46, 3, 3); }
+
+    .notecontainer{
+        padding: 20px !important;
+        border-radius: 20px !important;
+        background-color: rgb(201, 187, 169) !important;
+        box-shadow: 10px 10px 5px #aaaaaa !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
+
 
     .praise { color: rgb(8, 8, 126);}
 
@@ -539,7 +550,7 @@ p {text-align: justify;}
       /****** MOBILE ******/
 
       .imgsc {
-        max-inline-size: 40%;
+        max-inline-size: 60%;
         block-size: auto;
         border-radius: 20px !important;
         background-color: rgb(219, 214, 202) !important;
@@ -547,3 +558,16 @@ p {text-align: justify;}
         position: relative !important;
         overflow: hidden !important;
       }
+
+
+
+
+      /* <center>
+      <div class="container">
+        <div class="tocCon">
+            <div class="notecontainer">
+
+            </div>
+          </div>
+        </div>
+      </center> <br> */
