@@ -559,6 +559,13 @@ p {text-align: justify;}
         overflow: hidden !important;
       }
 
+          /* Trainees Badge */
+    .bulletin {
+        color: rgb(255, 255, 255);
+        background-color: rgb(7, 155, 147);
+        padding: 5px;
+    }
+
 
 
 
