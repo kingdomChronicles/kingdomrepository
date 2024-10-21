@@ -481,6 +481,15 @@ p {text-align: justify;}
         overflow: hidden !important;
     }
 
+    .toc{
+        padding: 20px !important;
+        border-radius: 20px !important;
+        background-color: rgb(219, 214, 202) !important;
+        box-shadow: 10px 10px 5px #aaaaaa !important;
+        position: relative !important;
+        overflow: hidden !important;
+    }
+
 
 
 
